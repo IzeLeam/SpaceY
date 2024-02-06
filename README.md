@@ -1,46 +1,138 @@
-# Getting Started with Create React App
+# Fiche identité du projet
+## Nom du projet
+Space Y
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+Space Y est une application web permettant de visualiser des données de la NASA sur les objets célestes tels que la Terre et la Lune principalement.
 
-## Available Scripts
+## Public cible
+Le public cible est principalement les passionnés d'astronomie, mais aussi les curieux du domaine.
 
-In the project directory, you can run:
+## Fonctionnalités de l'application
+- Visualisation de la photo la plus récente de la Terre
+- Affichage de l'âge de la Terre
 
-### `npm start`
+- Photo du jour : 
+    Un petit quiz sur cette photo, 4 choix possibles, une seule bonne réponse.
+    Un texte descriptif de la photo apparaît après avoir répondu à la question.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Affichage du nombre d'astéroïdes connus en temps réel
+- Visualisation des astéroïdes qui passeront prochainement près de la Terre dans la semaine
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Techniques de recueil des données pour la définition des besoins utilisateurs
+- Questionnaire d'analyse
+- Outils d'analyse
+- Test utilisateur
+- Eye tracking
 
-### `npm test`
+## Scénarios
+### Persona 1
+Harley se connecte à l’application web Space Y et visualise la photo la plus récente de la Terre. Il est impressionné par la qualité de l’image et décide de l’utiliser pour son cours de SVT. Il consulte ensuite l’âge de la Terre et le nombre d’astéroïdes connus. Il est surpris par le nombre d’astéroïdes connus et décide de les montrer à ses élèves. Il consulte ensuite la liste des astéroïdes qui passeront prochainement près de la Terre dans la semaine et décide de les montrer à ses élèves.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Persona 2
+Léna se connecte à Space Y pour faire une pause dans sa journée. Elle admire calmement la photo la plus récente de la Terre. En voyant la photo du jour, elle décide de répondre au quiz et clique sur la bonne réponse. Le descriptif de la photo lui offre un petit de lecture ainsi que des informations intéressantes comblant sa curiosité. Elle consulte ensuite l’âge de la Terre et le nombre d’astéroïdes connus. Elle est surprise par le nombre d’astéroïdes connus et décide de les partager sur ses réseaux sociaux. En voyant qu'un astéroïde passera prochainement près de la Terre, elle décide d'organiser une soirée d'observation avec ses amis.
 
-### `npm run build`
+## Enchainement des écrans de l'application
+- Titre du projet avec la photo la plus récente de la Terre
+- Timer de l'âge de la Terre
+- Photo du jour avec quiz
+- Description de la photo
+- Nombre d'astéroïdes connus
+- Liste des astéroïdes qui passeront prochainement près de la Terre dans la semaine sous forme d'un carrousel
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Questionnaire
+## Introduction
+Bonjour, nous sommes une équipe de développeurs passionnés par l'astronomie. Nous avons besoin de votre aide pour améliorer notre application web Space Y. Votre avis est très important pour nous, c'est pourquoi nous vous demandons de bien vouloir répondre à ce questionnaire. Cela ne vous prendra que quelques minutes et vous nous aiderez à améliorer notre application pour qu'elle réponde au mieux à vos attentes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Informations personnelles
+1. Quel est votre âge ?
+   - Moins de 18 ans
+   - 18-25 ans
+   - 26-35 ans
+   - 36-45 ans
+   - + de 45 ans
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Quel est votre sexe ?
+   - Homme
+   - Femme
 
-### `npm run eject`
+3. Quelle est votre profession ?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. Intérêt pour l'astronomie
+   - Pas du tout intéressé
+   - Peu intéressé
+   - Intéressé
+   - Très intéressé
+   - Passionné
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Principal moyen de connexion à l'application
+   - Ordinateur
+   - Tablette
+   - Smartphone
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Questions sur l'application
+1. Avez-vous déjà utilisé une application sur le thème de l'astronomie ?
+   - Oui
+   - Non
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. Quels aspects de l'astronomie vous intéressent le plus ?
+   - Les planètes du système solaire
+   - Les étoiles et les galaxies
+   - Les astéroïdes et les comètes
+   - Les phénomènes astronomiques (éclipses, aurores boréales, etc.)
+   - Autre (précisez)
 
-## Learn More
+3. Qu'est-ce qui vous attirerait le plus dans l'utilisation de l'application ?
+   - La visualisation des photos de la Terre et de l'espace
+   - Quiz sur la photo du jour
+   - Informations sur l'âge de la Terre
+   - Informations sur les astéroïdes
+   - Autre (précisez)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Aimerez-vous recevoir des informations quotidiennes sur l'astronomie directement sur l'application ?
+   - Oui
+   - Non
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Dans quel cadre utiliseriez-vous l'application ?
+   - Professionnel
+   - Éducatif
+   - Personnel
+   - Autre (précisez)
+
+6. Quels types d'informations ou de fonctionnalités supplémentaires aimeriez-vous voir sur l'application ?
+
+7. À quel point seriez-vous susceptible de recommander l'application à un ami ou à un collègue ?
+    - Très susceptible
+    - Susceptible
+    - Peu susceptible
+    - Pas du tout susceptible
+
+8. Comment préférez-vous consommer des informations sur l'astronomie ?
+   - Via une application mobile
+   - Sur un site web
+   - Dans des livres ou des magazines
+   - À la télévision
+   - Autre (précisez)
+
+9. À quelle fréquence pensez-vous utiliser l'application ?
+   - Tous les jours
+   - Plusieurs fois par semaine
+   - Une fois par semaine
+   - Plusieurs fois par mois
+   - Une fois par mois
+   - Moins d'une fois par mois
+
+10. À votre avis, quelle est la principale valeur ajoutée de l'application Space Y par rapport à d'autres applications sur le même thème ?
+
+11. Quel serait votre niveau de satisfaction si l'application correspondait à vos attentes ?
+   - Très satisfait
+   - Satisfait
+   - Peu satisfait
+   - Pas du tout satisfait
+
+
+
+
+
+
+
