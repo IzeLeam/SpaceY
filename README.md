@@ -50,89 +50,83 @@ Bonjour, nous sommes une équipe de développeurs passionnés par l'astronomie. 
    - 18-25 ans
    - 26-35 ans
    - 36-45 ans
-   - + de 45 ans
+   - Plus de 45 ans
 
-2. Quel est votre sexe ?
-   - Homme
-   - Femme
+2. Quelle est votre profession ?
 
-3. Quelle est votre profession ?
+3. Quel est votre support numérique préféré au quotidien ?
+   - Ordinateur
+   - Tablette
+   - Smartphone
 
-4. Intérêt pour l'astronomie
+4. Quel est votre intérêt pour l'astronomie
    - Pas du tout intéressé
    - Peu intéressé
    - Intéressé
    - Très intéressé
    - Passionné
 
-5. Principal moyen de connexion à l'application
-   - Ordinateur
-   - Tablette
-   - Smartphone
-
 ## Questions sur l'application
 1. Avez-vous déjà utilisé une application sur le thème de l'astronomie ?
    - Oui
    - Non
+   - Je ne sais pas
 
-2. Quels aspects de l'astronomie vous intéressent le plus ?
+2. Si oui, laquelle ?
+
+3. Quels aspects de l'astronomie vous intéressent le plus ?
    - Les planètes du système solaire
    - Les étoiles et les galaxies
    - Les astéroïdes et les comètes
    - Les phénomènes astronomiques (éclipses, aurores boréales, etc.)
    - Autre (précisez)
 
-3. Qu'est-ce qui vous attirerait le plus dans l'utilisation de l'application ?
+4. Qu'est-ce qui vous attirerait le plus dans l'utilisation de l'application ?
    - La visualisation des photos de la Terre et de l'espace
    - Quiz sur la photo du jour
    - Informations sur l'âge de la Terre
    - Informations sur les astéroïdes
    - Autre (précisez)
 
-4. Aimerez-vous recevoir des informations quotidiennes sur l'astronomie directement sur l'application ?
+5. Aimerez-vous recevoir des informations quotidiennes sur l'astronomie directement sur l'application ?
    - Oui
    - Non
+   - Je ne sais pas
 
-5. Dans quel cadre utiliseriez-vous l'application ?
+6. Dans quel cadre utiliseriez-vous l'application ?
    - Professionnel
    - Éducatif
+   - Associatif
    - Personnel
    - Autre (précisez)
 
-6. Quels types d'informations ou de fonctionnalités supplémentaires aimeriez-vous voir sur l'application ?
-
-7. À quel point seriez-vous susceptible de recommander l'application à un ami ou à un collègue ?
-    - Très susceptible
-    - Susceptible
-    - Peu susceptible
-    - Pas du tout susceptible
-
-8. Comment préférez-vous consommer des informations sur l'astronomie ?
+7. Comment préfériez-vous vous renseigner sur l'astronomie ?
    - Via une application mobile
    - Sur un site web
    - Dans des livres ou des magazines
    - À la télévision
    - Autre (précisez)
 
-9. À quelle fréquence pensez-vous utiliser l'application ?
+8. À quelle fréquence pensez-vous utiliser l'application ?
    - Tous les jours
    - Plusieurs fois par semaine
    - Une fois par semaine
    - Plusieurs fois par mois
    - Une fois par mois
    - Moins d'une fois par mois
+   - Je ne sais pas
 
-10. À votre avis, quelle est la principale valeur ajoutée de l'application Space Y par rapport à d'autres applications sur le même thème ?
+9. Quels types d'informations ou de fonctionnalités supplémentaires aimeriez-vous voir sur l'application ?
 
-11. Quel serait votre niveau de satisfaction si l'application correspondait à vos attentes ?
-   - Très satisfait
-   - Satisfait
-   - Peu satisfait
-   - Pas du tout satisfait
+10. À votre avis, quelle est la principale valeur ajoutée de l'application Space Y par rapport à d'autres applications que vous connaissez ?
+    - La visualisation des photos de la Terre et de l'espace
+    - Quiz sur la photo du jour
+    - Informations sur l'âge de la Terre
+    - Informations sur les astéroïdes
+    - Je ne sais pas
 
-
-
-
-
-
-
+11. À quel point seriez-vous susceptible de recommander l'application à un ami ou à un collègue ?
+    - Très susceptible
+    - Susceptible
+    - Peu susceptible
+    - Pas du tout susceptible
