@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/Earth.css'
 
 function Earth() {
     return (
