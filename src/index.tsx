@@ -8,7 +8,7 @@ import './index.css';
 import Title from "./components/Title";
 import Navigation from "./components/Navigation";
 import AgeTimer from "./components/AgeTimer";
-import Earth from "./components/Earth";
+import Home from "./components/Home";
 import POTD from "./components/POTD";
 import AsteroidCounter from "./components/AsteroidCounter";
 import NearAsteroid from "./components/NearAsteroid";
@@ -21,8 +21,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <Navigation/>
-        <Title/>
-        <Earth/>
+        <Home/>
         <AgeTimer/>
         <POTD/>
         <AsteroidCounter/>
