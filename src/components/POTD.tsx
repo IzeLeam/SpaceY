@@ -3,7 +3,7 @@ import '../styles/POTD.css';
 
 function POTD() {
     return (
-        <div className="potd-container">
+        <div className="potd-container" id="potd">
             <img className="potd" src={require('../assets/epic_1b_20190530011359.png')} alt="Earth"/>
             <div className="quiz">
                 <h2 className="question">What do you see</h2>
