@@ -1,9 +1,8 @@
 import React from 'react';
-import '../styles/Title.css';
 
 function Title() {
     return (
-        <div className="title-container">
+        <div className="title-container" id="page-top">
             <h1> Space Y </h1>
         </div>
     )

@@ -1,0 +1,15 @@
+.agetimer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  background-color: #000;
+}
+
+.agetimer-container p {
+  font-size: 5em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: center;
+}

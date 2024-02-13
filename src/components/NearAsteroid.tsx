@@ -2,7 +2,7 @@ import React from "react";
 
 function NearAsteroid() {
     return (
-        <div className="nearasteroid-container">
+        <div className="nearasteroid-container" id="asteroidInfos">
 
         </div>
     )
