@@ -17,6 +17,7 @@ function AgeTimer() {
         const timer = document.getElementsByClassName("timer")[0];
         timer.innerHTML = timeConvert(counter++);
     }
+
     function formalizeNumber(n : number) {
         // Convertir le nombre en une chaîne de caractères
         let numberString = String(n);
@@ -38,7 +39,6 @@ function AgeTimer() {
         return formattedParts.join("");
     }
 
-
     //Fonction qui passe un temps en secondes en année jour heures minutes secondes
     function timeConvert(time : number) {
         let year = Math.floor(time / 31536000) + years ;
@@ -59,11 +59,9 @@ function AgeTimer() {
         timerID = setInterval(timeAsync, 1000);
     }
 
-
-
     return (
         <div className="agetimer-container" id="ageTimer">
-            <p> Age of the earth : </p>
+            <p> Age of the earth </p>
             <p className="timer"></p>
         </div>
     )
