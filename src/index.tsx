@@ -2,11 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-
-/**
- * The following components are imported from the components' folder.
- */
-import Title from "./components/Title";
 import Navigation from "./components/Navigation";
 import AgeTimer from "./components/AgeTimer";
 import Home from "./components/Home";

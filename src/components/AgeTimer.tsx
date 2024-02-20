@@ -42,7 +42,7 @@ function AgeTimer() {
 
     return (
         <div className="agetimer-container" id="ageTimer">
-            <p> Age of the earth : </p>
+            <p> Age of the earth </p>
             <p className="timer"></p>
         </div>
     )
