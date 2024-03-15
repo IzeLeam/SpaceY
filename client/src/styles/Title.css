@@ -4,12 +4,10 @@
   align-items: center;
   height: 25vh;
   background-color: #000;
+  position: absolute;
 }
 
 .title-container h1 {
-  font-size: 5em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  text-align: center;
+
+
 }

@@ -1,13 +1,14 @@
 import React from 'react'
 import '../styles/Navigation.css';
 import '../js/Navigation.js';
+import Image from '../assets/logotype_spacey_clair.svg';
 
 function Navigation() {
     return (
         <div className="nav-container">
             <nav className="navbar navbar-expand-lg fixed-top py-3" id="mainNav">
                 <div className="container px-0 ">
-                    <a className="navbar-brand" href="#page-top">Space Y</a>
+                    <a className="navbar-brand" href="#page-top"> <img src={Image} alt="Earth" height={40}/> </a>
                     <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                             aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
