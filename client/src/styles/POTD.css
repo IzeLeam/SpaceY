@@ -9,7 +9,20 @@
     justify-content: space-evenly;
 }
 
-.potd-container .potd {
+.potd-container img {
+    width: 40%;
+    height: 90%;
+    object-fit: cover;
+    transition: 1s ease-out;
+}
+
+.potd-container .description {
+    display: none;
+}
+
+.potd-container .description.visible {
+    display: flex;
+    transition: 1s ease-out;
 }
 
 .potd-container .quiz {

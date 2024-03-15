@@ -1,24 +1,51 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import '../styles/POTD.css';
+import {wait} from "@testing-library/user-event/dist/utils";
 
 function POTD() {
 
-    const goodAnswer = "Earth"
+    let goodAnswer = "undefined"
     let guessed = false;
 
+    const [img, setImg] = useState('');
+    const [description, setDescription] = useState('');
+
+    async function fetchData() {
+        const response = await fetch('http://localhost:5000/potd');
+        const data = await response.json()
+        setImg(data.hdurl);
+        setDescription(data.explanation);
+        goodAnswer = data.title;
+
+        const buttons = document.querySelectorAll('.options button');
+        const randomIndex = Math.floor(Math.random() * 4);
+        buttons[randomIndex].textContent = goodAnswer;
+        let i = 0;
+        for (let j = 0; j < 4; j++) {
+            if (j === randomIndex) continue;
+            buttons[j].textContent = "test";
+            i++;
+        }
+    }
+
     useEffect(() => {
+        fetchData();
+
         const buttons = document.querySelectorAll('button');
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 if (guessed) return;
                 guessed = true;
 
-                //Remove effect on all buttons
+                const descriptionContainer = document.querySelector('.description');
+                if (descriptionContainer) {
+                    descriptionContainer.classList.add('visible')
+                }
+
                 for (let i = 0; i < buttons.length; i++) {
                     buttons[i].style.cursor = "default";
                     buttons[i].style.backgroundColor = "white";
                 }
-
                 const question = document.querySelector('.question');
                 if (button.textContent === goodAnswer) {
                     button.style.backgroundColor = "#B2FF9D";
@@ -39,10 +66,8 @@ function POTD() {
 
     return (
         <div className="potd-container" id="potd">
-            <img className="potd" src={require('../assets/epic_1b_20190530011359.png')} alt="Earth"/>
-            <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis felis id tortor scelerisque pellentesque eu vitae metus. Duis tincidunt, nisi sit amet maximus facilisis, ipsum ligula sollicitudin lorem, ac condimentum dui eros in ligula. Morbi laoreet quis est nec consectetur. Sed turpis ex, tristique sed justo id, efficitur suscipit enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur neque ante, efficitur in massa sed, efficitur porttitor tellus. Suspendisse vitae turpis eget ante maximus venenatis. Nunc quam nisi, hendrerit non neque id, dapibus malesuada eros. Donec at ullamcorper sapien, ac rhoncus magna. Proin egestas eget dolor a tempor. Duis suscipit, orci sed fringilla faucibus, ex neque vestibulum magna, eu tincidunt nunc dui vitae massa. Integer at tristique leo. Donec porta nunc id massa dictum, vel rhoncus justo aliquam. Aliquam nulla odio, accumsan rutrum finibus vel, molestie vel neque. Sed feugiat leo nisl, at iaculis augue faucibus sit amet. Fusce dolor erat, vestibulum sed mollis sed, lacinia pulvinar ex.
-            </p>
+            <img className="potd" src={img} alt="Earth"/>
+            <p className="description">{description}</p>
             <div className="quiz">
                 <h2 className="question">What do you see</h2>
                 <div className="options">
