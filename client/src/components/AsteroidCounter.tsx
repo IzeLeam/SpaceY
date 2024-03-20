@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/AsteroidCounter.css';
 
+
+
 function getTimeStampMin() {
     let date = new Date().getTime();
     let timeStampMin = Math.floor(date / 100000) - 17000000;
@@ -10,14 +12,17 @@ function getTimeStampMin() {
 function AsteroidCounter() {
     let timerID = null;
     let counter = getTimeStampMin();
-    let nbAsteroids = 600000 + counter ;
+    //let nbAsteroids = 600000 + counter ;
+
+    const [nbAsteroid, setNbAsteroid] = React.useState(600000+counter);
+    const [StringNbAsteroid, setStringNbAsteroid] = React.useState("") ;
 
     function updateTime() {
-        const timer = document.getElementsByClassName("count")[0];
-        timer.innerHTML = formalizeNumber(nbAsteroids++);
+        setNbAsteroid(600000 + counter++) ;
+        setStringNbAsteroid(formalize(nbAsteroid));
     }
 
-    function formalizeNumber(n : number) {
+    function formalize(n : number) {
         // Convertir le nombre en une chaîne de caractères
         let numberString = String(n);
 
@@ -44,14 +49,14 @@ function AsteroidCounter() {
     }
 
     /* Start the timer when the page is loaded */
-    window.onload = function() {
+    window.addEventListener('load', function() {
         updateTime()
         timerID = setInterval(timeAsync, 60000);
-    }
+    });
     return (
         <div className="asteroidcounter-container" id="asteroidCount">
             <h2> Number of known astéroïds by humanity : </h2>
-            <h2 className="count"></h2>
+            <h2 className="count">{StringNbAsteroid}</h2>
         </div>
     )
 }
