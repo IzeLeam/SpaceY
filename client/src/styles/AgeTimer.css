@@ -3,12 +3,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 25vh;
+  height: 50vh;
   background-color: #000;
 }
 
+.agetimer-container h2 {
+  font-size: 3em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin: 0;
+  text-align: center;
+}
+
 .agetimer-container p {
-  font-size: 2em;
+  font-size: 1.8em;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 10px;

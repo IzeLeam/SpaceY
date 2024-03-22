@@ -3,8 +3,7 @@ import '../styles/AgeTimer.css';
 
 function getTimeSecondes() {
     let date = new Date().getTime();
-    let dateSec = Math.floor(date / 1000);
-    return dateSec ;
+    return Math.floor(date / 1000);
 }
 
 function AgeTimer() {
@@ -55,13 +54,14 @@ function AgeTimer() {
     }
 
     /* Start the timer when the page is loaded */
-    window.onload = function() {
+    window.addEventListener('load', function() {
+        console.log("AgeTimer loaded");
         timerID = setInterval(timeAsync, 1000);
-    }
+    });
 
     return (
         <div className="agetimer-container" id="ageTimer">
-            <p> Age of the earth </p>
+            <h2> Age of the earth </h2>
             <p className="timer"></p>
         </div>
     )
