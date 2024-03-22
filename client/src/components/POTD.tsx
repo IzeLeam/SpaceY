@@ -31,15 +31,28 @@ function POTD() {
     useEffect(() => {
         fetchData();
 
+        const image = document.getElementById("img");
+
+        if (image) {
+            image.onmousemove = e => {
+                const rect = image.getBoundingClientRect(),
+                    x = e.clientX - rect.left,
+                    y = e.clientY - rect.top;
+
+                image.style.setProperty('--px', `${x}px`);
+                image.style.setProperty('--py', `${y}px`);
+            }
+        }
+
         const buttons = document.querySelectorAll('button');
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 if (guessed) return;
                 guessed = true;
 
-                const descriptionContainer = document.querySelector('.description');
-                if (descriptionContainer) {
-                    descriptionContainer.classList.add('visible')
+                const container = document.querySelector('.potd-container');
+                if (container) {
+                    container.classList.add('visible')
                 }
 
                 for (let i = 0; i < buttons.length; i++) {
@@ -61,12 +74,12 @@ function POTD() {
                 }
             });
         });
-    }, []);
+    });
 
 
     return (
         <div className="potd-container" id="potd">
-            <img className="potd" src={img} alt="Earth"/>
+            <img className="potd" id="img" src={img} alt="Earth"/>
             <p className="description">{description}</p>
             <div className="quiz">
                 <h2 className="question">What do you see</h2>

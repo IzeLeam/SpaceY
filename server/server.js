@@ -11,6 +11,39 @@ app.listen(5000, () => {
 
 const API_KEY = 'idjXegOG5bwYVk8pY9nGo7OTCIsriDCeX7GMGsmt';
 
+/*
+ MongoDb Client
+ */
+
+const mongodb = require('mongodb');
+const MongoClient = mongodb.MongoClient;
+
+const url = 'mongodb://luptilu.fr:27017';
+const dbName = 'spacey';
+const client = new MongoClient(url, { useNewUrlParser: true });
+
+function connect() {
+    return new Promise((resolve, reject) => {
+        client.connect(err => {
+            if (err) {
+                reject(err);
+            } else {
+                console.log('Connected successfully to server');
+                const db = client.db(dbName);
+                resolve(db);
+            }
+        });
+    });
+}
+
+const db = client.db(dbName);
+const collection = db.collection('spacey');
+
+app.get('/test', (req, res) => {
+    const document = collection.find({});
+    res.send(document.test);
+});
+
 app.get('/earth/picture', (req, res) => {
     let request = 'https://api.nasa.gov/EPIC/api/natural?api_key=' + API_KEY;
     fetch(request)
@@ -40,6 +73,32 @@ app.get('/potd', (req, res) => {
                 hdurl: data.hdurl
             }
             res.send(newData);
+        })
+        .catch(error => {
+            console.log(error);
+            res.status(500).send('Error fetching data from NASA API');
+        });
+});
+
+app.get('/asteroids/counter', (req, res) => {
+    let request = "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=" + API_KEY;
+    fetch(request)
+        .then(response => response.json())
+        .then(data => {
+            res.send(data.total_elements.toString());
+        })
+        .catch(error => {
+            console.log(error);
+            res.status(500).send('Error fetching data from NASA API');
+        });
+});
+
+app.get('/asteroids', (req, res) => {
+    let request = "https://api.nasa.gov/neo/rest/v1/feed?detailed=true&api_key=" + API_KEY;
+    fetch(request)
+        .then(response => response.json())
+        .then(data => {
+            res.send(data);
         })
         .catch(error => {
             console.log(error);
