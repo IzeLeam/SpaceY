@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import '../styles/POTD.css';
-import {wait} from "@testing-library/user-event/dist/utils";
 
 function POTD() {
 
@@ -17,19 +16,35 @@ function POTD() {
         setDescription(data.explanation);
         goodAnswer = data.title;
 
+        const fakeAnswers = await fetch('http://localhost:5000/potd/fakeAnswers');
+        const fakeTitles = await fakeAnswers.json();
+
+
         const buttons = document.querySelectorAll('.options button');
         const randomIndex = Math.floor(Math.random() * 4);
         buttons[randomIndex].textContent = goodAnswer;
-        let i = 0;
-        for (let j = 0; j < 4; j++) {
-            if (j === randomIndex) continue;
-            buttons[j].textContent = "test";
-            i++;
+        for (let i = 0; i < buttons.length; i++) {
+            if (i !== randomIndex) {
+                buttons[i].textContent = fakeTitles[i];
+            }
         }
     }
 
     useEffect(() => {
         fetchData();
+
+        const image = document.getElementById("img");
+
+        if (image) {
+            image.onmousemove = e => {
+                const rect = image.getBoundingClientRect(),
+                    x = e.clientX - rect.left,
+                    y = e.clientY - rect.top;
+
+                image.style.setProperty('--px', `${x}px`);
+                image.style.setProperty('--py', `${y}px`);
+            }
+        }
 
         const buttons = document.querySelectorAll('button');
         buttons.forEach(button => {
@@ -37,9 +52,9 @@ function POTD() {
                 if (guessed) return;
                 guessed = true;
 
-                const descriptionContainer = document.querySelector('.description');
-                if (descriptionContainer) {
-                    descriptionContainer.classList.add('visible')
+                const container = document.querySelector('.potd-container');
+                if (container) {
+                    container.classList.add('visible')
                 }
 
                 for (let i = 0; i < buttons.length; i++) {
@@ -61,20 +76,20 @@ function POTD() {
                 }
             });
         });
-    }, []);
+    });
 
 
     return (
         <div className="potd-container" id="potd">
-            <img className="potd" src={img} alt="Earth"/>
+            <img className="potd" id="img" src={img} alt="Earth"/>
             <p className="description">{description}</p>
             <div className="quiz">
                 <h2 className="question">What do you see</h2>
                 <div className="options">
-                    <button>Earth</button>
-                    <button>Mars</button>
-                    <button>Venus</button>
-                    <button>Mercury</button>
+                    <button>undefined</button>
+                    <button>undefined</button>
+                    <button>undefined</button>
+                    <button>undefined</button>
                 </div>
             </div>
         </div>

@@ -5,3 +5,7 @@
   height: 25vh;
   background-color: #000;
 }
+
+.title-container img {
+  height: 80%;
+}
