@@ -1,14 +1,50 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import '../styles/Navigation.css';
 import '../js/Navigation.js';
-import Image from '../assets/logotype_spacey_clair.svg';
+import LogotypeClair from '../assets/logotype_spacey_clair.svg';
+import LogotypeFonce from '../assets/logotype_spacey_fonce.svg';
+
 
 function Navigation() {
+
+    const [navbarShrink, setNavbarShrink] = useState(false);
+    const [logotype, setLogotype] = useState(LogotypeClair);
+
+    const setLogotypeClair = () => {
+        // Change dynamiquement la source de l'image
+        setLogotype(LogotypeClair);
+    };
+
+    const setLogotypeFonce = () => {
+        // Change dynamiquement la source de l'image
+        setLogotype(LogotypeFonce);
+    };
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY < 130) {
+                setNavbarShrink(false);
+                setLogotypeClair();
+            } else {
+                setNavbarShrink(true);
+                setLogotypeFonce();
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        // Nettoyage de l'écouteur d'événement lorsque le composant est démonté
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []); // Le tableau vide [] signifie que cet effet ne s'exécutera qu'une seule fois après le rendu initial du composant
+
+
     return (
         <div className="nav-container">
-            <nav className="navbar navbar-expand-lg fixed-top py-3" id="mainNav">
+            <nav className={navbarShrink ? 'navbar navbar-shrink navbar-expand-lg fixed-top py-3' : 'navbar navbar-expand-lg fixed-top py-3' } id="mainNav">
                 <div className="container px-0 ">
-                    <a className="navbar-brand" href="#page-top"> <img src={Image} alt="Earth" height={40}/> </a>
+                    <a className="navbar-brand" href="#page-top"> <img src={logotype} id="logotype" alt="logotype" height={40}/> </a>
                     <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                             aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
