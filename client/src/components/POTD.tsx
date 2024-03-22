@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import '../styles/POTD.css';
-import {wait} from "@testing-library/user-event/dist/utils";
 
 function POTD() {
 
@@ -17,14 +16,17 @@ function POTD() {
         setDescription(data.explanation);
         goodAnswer = data.title;
 
+        const fakeAnswers = await fetch('http://localhost:5000/potd/fakeAnswers');
+        const fakeTitles = await fakeAnswers.json();
+
+
         const buttons = document.querySelectorAll('.options button');
         const randomIndex = Math.floor(Math.random() * 4);
         buttons[randomIndex].textContent = goodAnswer;
-        let i = 0;
-        for (let j = 0; j < 4; j++) {
-            if (j === randomIndex) continue;
-            buttons[j].textContent = "test";
-            i++;
+        for (let i = 0; i < buttons.length; i++) {
+            if (i !== randomIndex) {
+                buttons[i].textContent = fakeTitles[i];
+            }
         }
     }
 
@@ -84,10 +86,10 @@ function POTD() {
             <div className="quiz">
                 <h2 className="question">What do you see</h2>
                 <div className="options">
-                    <button>Earth</button>
-                    <button>Mars</button>
-                    <button>Venus</button>
-                    <button>Mercury</button>
+                    <button>undefined</button>
+                    <button>undefined</button>
+                    <button>undefined</button>
+                    <button>undefined</button>
                 </div>
             </div>
         </div>
