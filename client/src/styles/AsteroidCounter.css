@@ -1,0 +1,27 @@
+.asteroidcounter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #000;
+    margin-top: 0%;
+}
+
+.asteroidcounter-container h2 {
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.asteroidcounter-container p {
+    font-size: 1.8em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin: 0;
+    text-align: center;
+}
