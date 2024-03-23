@@ -19,4 +19,4 @@ function connect() {
     });
 }
 
-export default connect;
+module.exports = connect;
