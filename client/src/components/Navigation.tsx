@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/Navigation.css';
-import '../js/Navigation.js';
 import LogotypeClair from '../assets/logotype_spacey_clair.svg';
 import LogotypeFonce from '../assets/logotype_spacey_fonce.svg';
 
@@ -23,7 +22,7 @@ function Navigation() {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY < 130) {
+            if (window.scrollY < 100) {
                 setNavbarShrink(false);
                 setLogotypeClair();
             } else {
@@ -50,7 +49,7 @@ function Navigation() {
                             aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ms-auto my-2 my-lg-0">
-                            <li className="nav-item"><a className="nav-link" href="#ageTimer"> Earth's birthday count</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#ageTimer"> Earth's birthday</a></li>
                             <li className="nav-item"><a className="nav-link" href="#potd">Picture of the day</a></li>
                             <li className="nav-item"><a className="nav-link" href="#asteroidCount"> Asteroid count</a></li>
                             <li className="nav-item"><a className="nav-link" href="#asteroidInfos"> Nearest asteroids Infos</a></li>

@@ -98,7 +98,6 @@ body {
     font-weight: var(--bs-body-font-weight);
     line-height: var(--bs-body-line-height);
     color: var(--bs-body-color);
-    text-align: var(--bs-body-text-align);
     background-color: var(--bs-body-bg);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -576,7 +575,6 @@ button:not(:disabled),
 }
 
 
-
 .fade {
     transition: opacity 0.15s linear;
 }
@@ -688,7 +686,6 @@ button:not(:disabled),
 .nav-link {
     display: block;
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-    font-size: var(--bs-nav-link-font-size);
     font-weight: var(--bs-nav-link-font-weight);
     color: var(--bs-nav-link-color);
     text-decoration: none;
@@ -753,7 +750,7 @@ button:not(:disabled),
 }
 
 .navbar-nav-scroll {
-    max-height: var(--bs-scroll-height, 75vh);
+    max-height: 75vh;
     overflow-y: auto;
 }
 
@@ -898,6 +895,7 @@ button:not(:disabled),
         overflow-y: visible;
     }
 }
+
 @media (min-width: 1200px) {
     .navbar-expand-xl {
         flex-wrap: nowrap;
@@ -992,6 +990,7 @@ button:not(:disabled),
         overflow-y: visible;
     }
 }
+
 .navbar-expand {
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -2181,7 +2180,7 @@ button:not(:disabled),
 #mainNav {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     background-color: #fff;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease-in;
 }
 #mainNav .navbar-brand {
     font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -2215,9 +2214,7 @@ button:not(:disabled),
     #mainNav .navbar-nav .nav-item .nav-link {
         color: #FFf8DC;
         padding: 0 1rem;
-        transition: 0.2s ease-in-out;
-
-
+        transition: 1s ease-in-out;
     }
     #mainNav .navbar-nav .nav-item .nav-link:hover {
         transform: scale(1.05);
@@ -2228,7 +2225,7 @@ button:not(:disabled),
     #mainNav.navbar-shrink {
         /*box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);*/
         background-color: #FFF8DC;
-        transition: 1s fade;
+        transition: background-color 0.3s ease-in;
     }
     #mainNav.navbar-shrink .navbar-brand {
         color: #212529;

@@ -52,15 +52,15 @@ function POTD() {
                 if (guessed) return;
                 guessed = true;
 
-                const container = document.querySelector('.potd-container');
+                const container = document.querySelector('.potd-quiz-container');
                 if (container) {
                     container.classList.add('visible')
                 }
 
                 for (let i = 0; i < buttons.length; i++) {
                     buttons[i].style.cursor = "default";
-                    buttons[i].style.backgroundColor = "white";
                 }
+
                 const question = document.querySelector('.question');
                 if (button.textContent === goodAnswer) {
                     button.style.backgroundColor = "#B2FF9D";
@@ -81,15 +81,18 @@ function POTD() {
 
     return (
         <div className="potd-container" id="potd">
-            <img className="potd" id="img" src={img} alt="Earth"/>
-            <p className="description">{description}</p>
-            <div className="quiz">
-                <h2 className="question">What do you see</h2>
-                <div className="options">
-                    <button>undefined</button>
-                    <button>undefined</button>
-                    <button>undefined</button>
-                    <button>undefined</button>
+            <h1>PICTURE OF THE DAY</h1>
+            <div className="potd-quiz-container">
+                <img className="potd" id="img" src={img} alt="Picture of the day"/>
+                <p className="description">{description}</p>
+                <div className="quiz">
+                    <h2 className="question">Guess what you see</h2>
+                    <div className="options">
+                        <button>undefined</button>
+                        <button>undefined</button>
+                        <button>undefined</button>
+                        <button>undefined</button>
+                    </div>
                 </div>
             </div>
         </div>

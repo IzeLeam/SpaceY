@@ -18,6 +18,19 @@ function NearAsteroid() {
             interval: NodeJS.Timer,
             intervalTime = 5000;
 
+        function format_date(date: string) {
+            let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+            let date_obj = new Date(date);
+            let day = date_obj.getDate();
+            let month = months[date_obj.getMonth()];
+            let year = date_obj.getFullYear();
+            let hours = date_obj.getHours();
+            let minutes = date_obj.getMinutes();
+
+            return `${month} ${day}, ${year} at ${hours}:${minutes}`;
+        }
+
         async function getAsteroidsData() {
             const response = await fetch('https://spacey.luptilu.fr/api/asteroids');
             let data = await response.json();
@@ -29,10 +42,11 @@ function NearAsteroid() {
                     let name = asteroids[j].name.match(/\(([^)]+)\)/)[1];
 
                     let diameter = asteroids[j].estimated_diameter.kilometers.estimated_diameter_min;
+                    diameter = Math.round(diameter * 100) / 100;
 
                     let close_approach_data = asteroids[j].close_approach_data[0];
                     let close_approach_date = close_approach_data.close_approach_date_full;
-                    let formatted_date = close_approach_date.replace(/-/g, " ");
+                    let formatted_date = format_date(close_approach_date);
 
                     let speed = close_approach_data.relative_velocity.kilometers_per_hour;
                     speed = Math.round(speed * 100) / 100;
@@ -46,12 +60,16 @@ function NearAsteroid() {
                     <div class="carousel__slider__item">
                         <div class="item__3d-frame">
                             <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <h1>${name}</h1>
-                                <p>Diameter: ${diameter} km</p>
-                                <p>${isDangerous ? "Potentially dangerous" : "Not dangerous"}</p>
-                                <p>Close Approach Date: </br>${formatted_date}</p>
-                                <p>Speed: ${speed} km/h</p>
-                                <p>Distance: ${distance} km</p>
+                                <h2>${name}</h2>
+                                <h3>Size</h3>
+                                <p>${diameter} m</p>
+                                <h3>Distance from Earth</h3>
+                                <p>${distance} km</p>
+                                <h3>Speed</h3>
+                                <p>${speed} km/h</p>
+                                <h3>Close Approach Date</h3>
+                                <p>${formatted_date}</p>
+                                <h3>${isDangerous ? "Potentially dangerous" : "Not dangerous"}</h3>
                             </div>
                         </div>
                     </div>
@@ -142,6 +160,7 @@ function NearAsteroid() {
 
     return (
         <div id="asteroidInfos" className="carousel">
+            <h1>NEAR ASTEROIDS</h1>
             <div className="carousel__body">
                 <div className="carousel__prev"><i className="far fa-angle-left">&lt;</i></div>
                 <div className="carousel__next"><i className="far fa-angle-right">&gt;</i></div>
