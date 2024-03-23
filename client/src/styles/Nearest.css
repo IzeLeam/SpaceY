@@ -1,25 +1,35 @@
 :root {
     --crsl-bg: black;
-    --box-bg: #002539;
+    --box-bg: #002538;
     --box-shadow: #0000001c;
     --box-shadow-border: #0000000f;
     --box-border: #fff8dc;
 }
 
 .carousel {
-    background-color: black;
+    background-color: var(--box-bg);
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
     height: 100vh;
 }
+
+.carousel h1 {
+    color: var(--box-border);
+    width: 100%;
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+}
+
 .carousel__prev, .carousel__next {
     position: absolute;
     transition: transform 0.25s ease;
-    bottom: 15%;
+    bottom: 10%;
 }
 .carousel__prev i, .carousel__next i {
     font-size: 60px;
@@ -44,6 +54,7 @@
     position: relative;
     transition: transform 1s ease-in-out;
     background: var(--crsl-bg);
+    margin-top: 50px;
 }
 .carousel__body .carousel__slider__item {
     position: relative;
@@ -68,9 +79,9 @@
     width: 100%;
     height: 40px;
     background: var(--box-shadow);
-    box-shadow: 0px 0px 5px 5px var(--box-shadow);
+    box-shadow: 0 0 5px 5px var(--box-shadow);
     transform: rotateX(90deg) translate3d(0px, -20px, 0px);
-    opacity: 0.85;
+    opacity: 0;
 }
 .carousel__body .carousel__slider__item .item__3d-frame__box {
     display: flex;
@@ -80,20 +91,29 @@
     height: 100%;
     box-sizing: border-box;
     border-color: var(--box-border);
-    background: var(--box-bg);
+    background: #00161FFF;
     border-width: 2px;
     border-style: solid;
-    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.2);
 }
-.carousel__body .carousel__slider__item .item__3d-frame__box h1 {
+.carousel__body .carousel__slider__item .item__3d-frame__box h2 {
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--box-border);
+    margin: 0;
+}
+.carousel__body .carousel__slider__item .item__3d-frame__box h3 {
     width: 100%;
     color: var(--box-border);
+    margin: 0 0 0 25px;
+    text-align: left;
 }
 
 .carousel__body .carousel__slider__item .item__3d-frame__box p {
     width: 100%;
+    text-align: left;
     color: var(--box-border);
-    margin: 0;
+    margin: 0 0 0 40px;
 }
 
 .carousel__body .carousel__slider__item .item__3d-frame__box--right, .carousel__body .carousel__slider__item .item__3d-frame__box--left {
@@ -105,7 +125,7 @@
     left: 0;
     border-left-width: 5px;
     transform: translate3d(1px, 0, -40px) rotateY(-90deg);
-    transform-origin: 0%;
+    transform-origin: 0;
 }
 .carousel__body .carousel__slider__item .item__3d-frame__box--right {
     right: 0;

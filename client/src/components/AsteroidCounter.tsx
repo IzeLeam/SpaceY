@@ -55,7 +55,7 @@ function AsteroidCounter() {
     });
     return (
         <div className="asteroidcounter-container" id="asteroidCount">
-            <h2> Number of known asteroids by humanity : </h2>
+            <h2>Number of known asteroids by humanity</h2>
             <h2 className="count">{StringNbAsteroid}</h2>
         </div>
     )
