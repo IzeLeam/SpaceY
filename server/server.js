@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const {response} = require("express");
+const connect = require('./database');
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors());
 
 app.listen(5000, () => {
     console.log('Server is running on port 5000');
@@ -11,40 +11,9 @@ app.listen(5000, () => {
 
 const API_KEY = 'idjXegOG5bwYVk8pY9nGo7OTCIsriDCeX7GMGsmt';
 
-/*
- MongoDb Client
- */
+connect();
 
-const mongodb = require('mongodb');
-const MongoClient = mongodb.MongoClient;
-
-const url = 'mongodb://luptilu.fr:27017';
-const dbName = 'spacey';
-const client = new MongoClient(url, { useNewUrlParser: true });
-
-function connect() {
-    return new Promise((resolve, reject) => {
-        client.connect(err => {
-            if (err) {
-                reject(err);
-            } else {
-                console.log('Connected successfully to server');
-                const db = client.db(dbName);
-                resolve(db);
-            }
-        });
-    });
-}
-
-const db = client.db(dbName);
-const collection = db.collection('spacey');
-
-app.get('/test', (req, res) => {
-    const document = collection.find({});
-    res.send(document.test);
-});
-
-app.get('/earth/picture', (req, res) => {
+app.get('/api/earth/picture', (req, res) => {
     let request = 'https://api.nasa.gov/EPIC/api/natural?api_key=' + API_KEY;
     fetch(request)
         .then(response => response.json())
@@ -62,7 +31,7 @@ app.get('/earth/picture', (req, res) => {
         });
 });
 
-app.get('/potd/fakeAnswers', (req, res) => {
+app.get('/api/potd/fakeAnswers', (req, res) => {
     //random number between 0 and 50
     let start = Math.floor(Math.random() * 50);
     let startdate = new Date();
@@ -90,7 +59,7 @@ app.get('/potd/fakeAnswers', (req, res) => {
         });
 });
 
-app.get('/potd', (req, res) => {
+app.get('/api/potd', (req, res) => {
     let request = 'https://api.nasa.gov/planetary/apod?api_key=' + API_KEY;
     fetch(request)
         .then(response => response.json())
@@ -108,7 +77,7 @@ app.get('/potd', (req, res) => {
         });
 });
 
-app.get('/asteroids/counter', (req, res) => {
+app.get('/api/asteroids/counter', (req, res) => {
     let request = "https://api.nasa.gov/neo/rest/v1/neo/browse/?api_key=" + API_KEY;
     fetch(request)
         .then(response => response.json())
@@ -121,7 +90,7 @@ app.get('/asteroids/counter', (req, res) => {
         });
 });
 
-app.get('/asteroids', (req, res) => {
+app.get('/api/asteroids', (req, res) => {
     let request = "https://api.nasa.gov/neo/rest/v1/feed?detailed=true&api_key=" + API_KEY;
     fetch(request)
         .then(response => response.json())

@@ -1,13 +1,9 @@
-/*
-    Utils for database connection
- */
-
 const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 
 const url = 'mongodb://luptilu.fr:27017';
 const dbName = 'spacey';
-const client = new MongoClient(url, { useNewUrlParser: true });
+const client = new MongoClient(url);
 
 function connect() {
     return new Promise((resolve, reject) => {
@@ -23,6 +19,4 @@ function connect() {
     });
 }
 
-module.exports = {
-    connect
-}
+export default connect;
