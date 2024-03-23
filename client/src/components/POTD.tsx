@@ -10,13 +10,13 @@ function POTD() {
     const [description, setDescription] = useState('');
 
     async function fetchData() {
-        const response = await fetch('http://localhost:5000/potd');
+        const response = await fetch('https://spacey.luptilu.fr/api/potd');
         const data = await response.json()
         setImg(data.hdurl);
         setDescription(data.explanation);
         goodAnswer = data.title;
 
-        const fakeAnswers = await fetch('http://localhost:5000/potd/fakeAnswers');
+        const fakeAnswers = await fetch('https://spacey.luptilu.fr/api/potd/fakeAnswers');
         const fakeTitles = await fakeAnswers.json();
 
 
