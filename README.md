@@ -5,6 +5,9 @@ Space Y
 ## Description
 Space Y est une application web permettant de visualiser des données de la NASA sur les objets célestes tels que la Terre et la Lune principalement.
 
+Trailer : https://youtu.be/JwrTgDrxWSU
+Site web : https://spacey.luptilu.fr
+
 ## Public cible
 Le public cible est principalement les passionnés d'astronomie, mais aussi les curieux du domaine.
 
