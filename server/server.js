@@ -9,7 +9,7 @@ app.listen(5000, () => {
     console.log('Server is running on port 5000');
 });
 
-const API_KEY = 'idjXegOG5bwYVk8pY9nGo7OTCIsriDCeX7GMGsmt';
+const API_KEY = 'HSugLyRICQWvXqM48uJeYvcY3msuHEfAsRDFJuQ1';
 
 connect();
 
