@@ -32,7 +32,7 @@ function NearAsteroid() {
         }
 
         async function getAsteroidsData() {
-            const response = await fetch('https://spacey.luptilu.fr/api/asteroids');
+            const response = await fetch('https://spacey.lucaprc.fr/api/asteroids');
             let data = await response.json();
             let near_objects = data.near_earth_objects;
             let dates = Object.keys(near_objects);
