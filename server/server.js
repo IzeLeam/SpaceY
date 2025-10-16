@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const connect = require('./database');
 
 app.use(cors());
 
@@ -10,8 +9,6 @@ app.listen(5000, () => {
 });
 
 const API_KEY = 'HSugLyRICQWvXqM48uJeYvcY3msuHEfAsRDFJuQ1';
-
-connect();
 
 app.get('/api/earth/picture', (req, res) => {
     let request = 'https://api.nasa.gov/EPIC/api/natural?api_key=' + API_KEY;
