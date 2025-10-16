@@ -4,7 +4,7 @@ function Earth() {
     const [img, setImg] = useState('');
 
     useEffect(() => {
-        fetch('https://spacey.luptilu.fr/api/earth/picture')
+        fetch('https://spacey.lucaprc.fr/api/earth/picture')
             .then(response => response.text())
             .then(data => setImg(data));
     }, []);
